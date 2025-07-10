@@ -7,4 +7,4 @@ redirect_from:
   - /about.html
 ---
 
-立格实验8班博客
+## 立格实验八班
