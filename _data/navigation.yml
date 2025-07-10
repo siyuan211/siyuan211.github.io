@@ -9,7 +9,7 @@
 
 main:
   - title: "成就"
-    url: /成就/
+    url: /achievement/
 
   - title: "Talks"
     url: /talks/    
