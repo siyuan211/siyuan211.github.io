@@ -11,8 +11,8 @@ main:
   - title: "成就"
     url: /achievement/
 
-  - title: "Talks"
-    url: /talks/    
+  - title: "作业成果"
+    url: /homework/    
 
   - title: "Teaching"
     url: /teaching/    
