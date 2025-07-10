@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "八班专属博客 / Site Title"
+title                    : "八班专属博客 "
 title_separator          : "-"
 name                     : &name "八班"
 description              : &description “皇家立格中的一员"
@@ -23,9 +23,9 @@ repository               : "siyuan211/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "皇家立格8班"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "皇家立格中的一员"
   location         : "Earth"
   employer         : "Red Brick University"
   uri              : # URL
