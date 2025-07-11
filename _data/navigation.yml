@@ -14,8 +14,8 @@ main:
   - title: "作业成果"
     url: /homework/    
 
-  #- title: "Teaching"
-  #  url: /teaching/    
+  - title: "名人名事"
+    url: /thing/    
     
   #- title: "Portfolio"
   #  url: /portfolio/
