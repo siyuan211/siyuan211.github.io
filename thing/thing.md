@@ -8,7 +8,7 @@ layout: archive
 
 ### 图一：qiao(乔)包
 
-![乔包](assets/images/zuowen.jpg)  
+![乔包](https://s21.ax1x.com/2025/07/11/pVlZFKI.jpg)  
 ✏️ “乔包吃饭”
 ## 💬 评论区（请使用 GitHub 登录）
 
