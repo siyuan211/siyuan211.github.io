@@ -1,7 +1,7 @@
 ---
-layout: single
-title: "名人名事"
 permalink: /thing/
+title: 名人名事
+layout: archive
 ---
 
 ## 📸 八班精彩名人
