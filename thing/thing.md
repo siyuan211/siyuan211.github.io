@@ -17,9 +17,10 @@ layout: archive
         data-repo="siyuan211/siyuan211.github.io"
         data-repo-id="R_kgDOPKMkKA"
         data-category="General"
-     data-category-id="DIC_kwDOPKMkKM4Cs0hY"
+        data-category-id="DIC_kwDOPKMkKM4Cs0hY"
         data-mapping="pathname"
         data-reactions-enabled="1"
+        data-input-position="bottom"
         data-theme="light"
         crossorigin="anonymous"
         async>
