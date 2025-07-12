@@ -1,14 +1,16 @@
 ---
+layout: single
 title: 大事件
-layout: archive
 permalink: /big/
-collection: big
-author_profile: true
 ---
 
-{% include base_path %}
+<h2>大事件列表</h2>
 
-{% for post in site.big %}
-  <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-  <p>{{ post.excerpt }}</p>
-{% endfor %}
+<ul>
+  {% for item in site.big %}
+    <li>
+      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      <span style="font-size: 0.9em; color: #ccc;">{{ item.date | date: "%Y-%m-%d" }}</span>
+    </li>
+  {% endfor %}
+</ul>
