@@ -229,7 +229,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
-
+  big:
+    output: true
+    permalink: /:big/:path/
 
 # These settings control how pages and collections are included in the site
 defaults:
