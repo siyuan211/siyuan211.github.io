@@ -1,8 +1,11 @@
 ---
-permalink: /big/
-title: 大事件
-layout: archive
+title: 第一个大事件
+date: 2025-07-12
+layout: single
+collection: big
+permalink: /big/first-event/
 ---
+
 ## 大事件
 
 ### 图一：Apple 🍎
