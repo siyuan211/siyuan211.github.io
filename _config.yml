@@ -10,6 +10,7 @@
 locale                   : "en-US"
 site_theme               : "default"
 title                    : "八班专属博客 "
+search: true
 title_separator          : "-"
 name                     : &name "八班"
 description              : &description “皇家立格中的一员"
