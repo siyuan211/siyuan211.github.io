@@ -21,7 +21,7 @@ main:
     url: /contact/
         
   - title: "大事件"
-    url: /_big/
+    url: /big/
     
   #- title: "CV"
   #  url: /cv/
