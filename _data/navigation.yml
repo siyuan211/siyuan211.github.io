@@ -20,8 +20,8 @@ main:
   - title: "联系我们"
     url: /contact/
         
-  #- title: "大事件"
-  #  url: /big/
+  - title: "大事件"
+    url: /big/
     
   #- title: "CV"
   #  url: /cv/
