@@ -1,6 +1,83 @@
+/* 设置网页背景 */
 body {
   background-image: url('https://s21.ax1x.com/2025/07/11/pVlV63j.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* 全站容器宽度适配 */
+.container, .page-content, .main {
+  max-width: 960px;
+  width: 90%;
+  margin: auto;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.85); /* 白底半透明让文字更清晰 */
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* 图片自动缩放，防止撑破 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+/* 标题美化 */
+h1, h2, h3 {
+  font-weight: bold;
+  color: #222;
+}
+
+/* 链接样式优化 */
+a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 按钮样式（可选） */
+button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #003d80;
+}
+
+/* 手机端字体与排版优化 */
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .container, .page-content, .main {
+    padding: 0.8rem;
+  }
 }
