@@ -4,15 +4,19 @@
 
 {% include seo.html %}
 
-<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+<link
+  href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"
+  type="application/atom+xml"
+  rel="alternate"
+  title="{{ site.title }} Feed">
 
-<!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  document.documentElement.className = document.documentElement.className
+    .replace(/\bno-js\b/g, '') + ' js ';
 </script>
 
 <!-- For all browsers -->
@@ -22,5 +26,84 @@
 <link rel="stylesheet" href="{{ base_path }}/assets/css/custom.css">
 
 <!-- GoatCounter 统计 -->
-<script data-goatcounter="https://siyuan-stats.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<script
+  data-goatcounter="https://siyuan-stats.goatcounter.com/count"
+  async
+  src="//gc.zgo.at/count.js"></script>
+
+<!-- 夜间/日间模式切换样式 -->
+<style>
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  body.dark-mode .container,
+  body.dark-mode .page-content,
+  body.dark-mode .main {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+  }
+
+  body.dark-mode a {
+    color: #90cdf4;
+  }
+
+  body.dark-mode a:hover {
+    color: #63b3ed;
+  }
+
+  body.dark-mode button {
+    background-color: #ffffff;
+    color: #000;
+  }
+
+  /* 模式切换按钮 */
+  #modeToggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  #modeToggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+</style>
+
+<!-- 夜间/日间模式切换脚本 -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // 创建切换按钮
+    const toggle = document.createElement("button");
+    toggle.id = "modeToggle";
+    toggle.textContent = "🌙 夜间模式";
+    document.body.appendChild(toggle);
+
+    const body = document.body;
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark") {
+      body.classList.add("dark-mode");
+      toggle.textContent = "☀️ 日间模式";
+    }
+
+    toggle.addEventListener("click", function () {
+      body.classList.toggle("dark-mode");
+      if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+        toggle.textContent = "☀️ 日间模式";
+      } else {
+        localStorage.setItem("theme", "light");
+        toggle.textContent = "🌙 夜间模式";
+      }
+    });
+  });
+</script>
