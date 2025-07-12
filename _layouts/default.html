@@ -1,123 +1,29 @@
-<header class="site-header">
-  <div class="container">
-    <div class="logo">
-      <a href="{{ site.baseurl | default: '/' }}">{{ site.title }}</a>
-    </div>
 
-    <nav class="site-nav" id="site-nav" role="navigation" aria-label="主导航">
-      <ul>
-        <li><a href="{{ site.baseurl | default: '/' }}">首页</a></li>
-        <li><a href="{{ site.baseurl }}/about/">关于</a></li>
-        <li><a href="{{ site.baseurl }}/categories/">分类</a></li>
-        <li><a href="{{ site.baseurl }}/tags/">标签</a></li>
-        <li><a href="{{ site.baseurl }}/archive/">归档</a></li>
-      </ul>
-    </nav>
+---
 
-    <button id="nav-toggle" class="nav-toggle" aria-label="切换导航菜单">
-      &#9776;
-    </button>
-  </div>
-</header>
+layout: compress
 
-<style>
-  .site-header {
-    background-color: rgba(0,0,0,0.7);
-    color: white;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-  }
+{% include base_path %}
 
-  .site-header .container {
-    max-width: 1080px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+<!doctype html>
 
-  .logo a {
-    color: white;
-    font-weight: bold;
-    font-size: 1.6em;
-    text-decoration: none;
-  }
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>  
+  <head>  
+    {% include head.html %}  
+    {% include head/custom.html %}  
+  </head>    <body>  {% include browser-upgrade.html %}  
+{% include masthead.html %}  
 
-  .site-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
+{{ content }}  
 
-  .site-nav li {
-    margin-left: 25px;
-  }
+<div class="page__footer">  
+  <footer>  
+    {% include footer/custom.html %}  
+    {% include footer.html %}  
+  </footer>  
+</div>  
 
-  .site-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1em;
-  }
+{% include scripts.html %}
 
-  .site-nav a:hover,
-  .site-nav a:focus {
-    text-decoration: underline;
-  }
-
-  /* 汉堡按钮默认隐藏 */
-  .nav-toggle {
-    display: none;
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-
-  /* 响应式 */
-  @media (max-width: 768px) {
-    .site-nav {
-      display: none;
-      flex-direction: column;
-      background-color: rgba(0,0,0,0.9);
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      width: 180px;
-      border-radius: 6px;
-      padding: 10px 0;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
-
-    .site-nav ul {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .site-nav li {
-      margin: 10px 20px;
-    }
-
-    .nav-toggle {
-      display: block;
-    }
-
-    .site-nav.active {
-      display: flex;
-    }
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const navToggle = document.getElementById('nav-toggle');
-    const siteNav = document.getElementById('site-nav');
-    navToggle.addEventListener('click', function () {
-      siteNav.classList.toggle('active');
-    });
-  });
-</script>
+  </body>  
+</html>  
