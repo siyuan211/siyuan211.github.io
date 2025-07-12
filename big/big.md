@@ -6,12 +6,7 @@ layout: archive
 ## 大事件
 
 ### 图一：Apple 🍎
-![🍎](https://s21.ax1x.com/2025/07/12/pVlNFh9.jpg
-https://s21.ax1x.com/2025/07/12/pVlNp0U.jpg
-https://s21.ax1x.com/2025/07/12/pVlNitJ.jpg
-https://s21.ax1x.com/2025/07/12/pVlNPk4.jpg
-https://s21.ax1x.com/2025/07/12/pVlN97F.jpg
-https://s21.ax1x.com/2025/07/12/pVlNApR.jpg)  
+![🍎](https://s21.ax1x.com/2025/07/12/pVlNFh9.jpg)  
 ✏️ “以下是近期关于 iPhone 17 与 iPhone 17 Pro 系列的核心传闻与点评梳理：
 
 
