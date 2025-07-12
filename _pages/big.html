@@ -1,0 +1,14 @@
+---
+title: 大事件
+layout: archive
+permalink: /big/
+collection: big
+author_profile: true
+---
+
+{% include base_path %}
+
+{% for post in site.big %}
+  <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+  <p>{{ post.excerpt }}</p>
+{% endfor %}
