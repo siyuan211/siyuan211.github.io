@@ -17,8 +17,8 @@ main:
   - title: "名人名事"
     url: /thing/    
     
-  #- title: "Portfolio"
-  #  url: /portfolio/
+  - title: "联系我们"
+    url: /contact/
         
   #- title: "Blog Posts"
   #  url: /year-archive/
