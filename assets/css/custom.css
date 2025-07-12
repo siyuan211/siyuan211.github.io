@@ -9,7 +9,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #222266; /* 统一字体颜色 */
+  color: #ffffff; /* 白色字体 */
   overflow-x: hidden;
 }
 
@@ -19,10 +19,10 @@ body {
   width: 90%;
   margin: auto;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明深色背景，让白字清晰 */
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  color: #222266; /* 容器内文字颜色保持一致 */
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  color: #ffffff; /* 保持白字 */
 }
 
 /* 图片自动缩放，防止撑破 */
@@ -37,24 +37,24 @@ img {
 /* 标题美化 */
 h1, h2, h3 {
   font-weight: bold;
-  color: #111155;
+  color: #ffffff; /* 白色标题 */
 }
 
 /* 链接样式优化 */
 a {
-  color: #3344dd;
+  color: #87cefa; /* 浅蓝色链接 */
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #2222aa;
+  color: #00bfff; /* 更亮蓝色 hover */
 }
 
-/* 按钮样式（可选） */
+/* 按钮样式 */
 button {
-  background-color: #3344dd;
-  color: white;
+  background-color: #ffffff;
+  color: #222;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
@@ -62,7 +62,7 @@ button {
 }
 
 button:hover {
-  background-color: #2222aa;
+  background-color: #e0e0e0;
 }
 
 /* 手机端字体与排版优化 */
