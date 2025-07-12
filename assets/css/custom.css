@@ -7,25 +7,25 @@ body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #ffffff; /* 白色字体 */
+  font-size: 18px; /* 更大的字体 */
+  line-height: 1.8;
+  color: #ffffff;
   overflow-x: hidden;
 }
 
-/* 全站容器宽度适配 */
+/* 容器样式优化 */
 .container, .page-content, .main {
   max-width: 960px;
   width: 90%;
   margin: auto;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.5); /* 半透明深色背景，让白字清晰 */
+  padding: 2rem 1.5rem;
+  background-color: rgba(0, 0, 0, 0.65);
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  color: #ffffff; /* 保持白字 */
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  color: #ffffff;
 }
 
-/* 图片自动缩放，防止撑破 */
+/* 图片自动缩放 */
 img {
   max-width: 100%;
   height: auto;
@@ -34,41 +34,47 @@ img {
   border-radius: 6px;
 }
 
-/* 标题美化 */
+/* 标题样式 */
 h1, h2, h3 {
   font-weight: bold;
-  color: #ffffff; /* 白色标题 */
+  color: #ffffff;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-/* 链接样式优化 */
+/* 链接优化 */
 a {
-  color: #87cefa; /* 浅蓝色链接 */
+  color: #87cefa;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #00bfff; /* 更亮蓝色 hover */
+  color: #00bfff;
 }
 
 /* 按钮样式 */
 button {
-  background-color: #ffffff;
+  background: linear-gradient(to right, #ffffff, #e0e0e0);
   color: #222;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #e0e0e0;
+  background: #dddddd;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-/* 手机端字体与排版优化 */
+/* 手机端优化 */
 @media screen and (max-width: 600px) {
   body {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   h1 {
@@ -80,6 +86,6 @@ button:hover {
   }
 
   .container, .page-content, .main {
-    padding: 0.8rem;
+    padding: 1rem;
   }
 }
