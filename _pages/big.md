@@ -1,14 +1,14 @@
 ---
-layout: single
 title: 大事件
+layout: archive
 permalink: /big/
+collection: big
 author_profile: true
 ---
 
-<h1>大事件目录</h1>
-
-<ul>
-  {% for post in site.dajishi %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%Y-%m-%d" }}</li>
-  {% endfor %}
-</ul>
+{% for post in site.big %}
+  <article>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
+  </article>
+{% endfor %}
