@@ -19,9 +19,6 @@ main:
     
   - title: "联系我们"
     url: /contact/
-
-  - title: "搜索"
-    url: "/search/"
         
   #- title: "Blog Posts"
   #  url: /year-archive/
