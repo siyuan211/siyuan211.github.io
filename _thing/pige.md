@@ -1,5 +1,5 @@
 ---
-title: pige
+title: 皮哥
 date: 2025-07-12
 layout: single
 collection: thing
