@@ -232,6 +232,9 @@ collections:
   big:
     output: true
     permalink: /:big/:path/
+  thing:
+    output: true
+    permalink: /:collection/:path/
 
 # These settings control how pages and collections are included in the site
 defaults:
