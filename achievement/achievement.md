@@ -11,3 +11,5 @@ layout: archive
 ![值周](https://s21.ax1x.com/2025/07/13/pVlIJvq.jpg)
 ![值周](https://s21.ax1x.com/2025/07/13/pVlItK0.jpg)
 这是2025年八年级下期的值周活动，以上是👩‍❤️‍💋‍👨
+![外出](https://s21.ax1x.com/2025/07/13/pVlINrV.jpg)
+玩的真是很开心😁
