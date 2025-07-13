@@ -6,5 +6,5 @@ collection: thing
 permalink: /thing/pi-ge/
 ---
 
-![](https://s21.ax1x.com/2025/07/11/pVlZFKI.jpg)  
-✏️ “乔包吃饭”
+![皮革](https://imgse.com/i/pV16ky4)  
+✏️ “皮哥睡梦间超不经意露出大大胃袋和大奶奶，真是米米嘟”
