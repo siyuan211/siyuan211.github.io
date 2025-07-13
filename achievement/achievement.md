@@ -1,9 +1,8 @@
 ---
 permalink: /achievement/
-title: 我的成就
+title: 我们的成就
 layout: archive
 ---
-# 我的成就
 
 ## 2025年奖项
 
