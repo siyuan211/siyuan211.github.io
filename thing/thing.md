@@ -18,6 +18,11 @@ layout: archive
 
 ![郭丽](https://s21.ax1x.com/2025/07/11/pVlZeIS.jpg)  
 ✏️ “郭丽学生物”
+### 图四：皮哥🐖
+
+![皮哥]
+(https://imgse.com/i/pVl6ky4)
+
 ## 💬 评论区（请使用 GitHub 登录）
 
 <div id="giscus_thread"></div>
