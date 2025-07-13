@@ -8,5 +8,4 @@ author_profile: true
 
 {% for post in site.thing %}
   <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-  <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
 {% endfor %}
