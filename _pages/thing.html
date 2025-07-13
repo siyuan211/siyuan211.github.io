@@ -6,6 +6,44 @@ collection: thing
 author_profile: true
 ---
 
-{% for post in site.thing %}
-  <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-{% endfor %}
+<style>
+.thing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.thing-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, background 0.3s ease;
+  text-align: center;
+}
+
+.thing-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.thing-card a {
+  color: #87cefa;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.thing-card a:hover {
+  text-decoration: underline;
+}
+</style>
+
+<div class="thing-grid">
+  {% for post in site.thing %}
+    <div class="thing-card">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </div>
+  {% endfor %}
+</div>
