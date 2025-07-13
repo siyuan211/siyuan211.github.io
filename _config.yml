@@ -18,9 +18,9 @@ author:
   location: "双流区迎春路四段双流中学实验学校"
   email: "siyuanliu958@gmail.com"
 
-# 评论设置（你用的是 Giscus，所以用 custom）
+# 评论设置（已关闭）
 comments:
-  provider: "custom"
+  provider: false
 
 # 集合（collections）
 collections:
@@ -41,7 +41,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
+      comments: false
       share: true
       related: true
 
@@ -52,6 +52,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      comments: false
 
   # 自定义 collection: big
   - scope:
@@ -60,7 +61,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      comments: true
+      comments: false
       share: true
 
   # 自定义 collection: thing
@@ -70,7 +71,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      comments: true
+      comments: false
       share: true
 
 # 插件
