@@ -23,8 +23,8 @@ main:
   - title: "大事件"
     url: /big/
     
-  #- title: "CV"
-  #  url: /cv/
+  - title: "游戏"
+    url: /game/
     
   # - title: "CV"
   #   url: /cv-json/
