@@ -19,8 +19,8 @@ layout: archive
 
 <div class="gallery">
   <img src="https://s21.ax1x.com/2025/07/13/pVlIdVU.jpg" alt="活动照1" />
-  <img src="https://s21.ax1x.com/2025/07/13/pVlItK0.jpg" alt="活动照2" />
-  <img src="https://s21.ax1x.com/2025/07/13/pVlINrV.jpg" alt="活动照3" />
-  <img src="https://s21.ax1x.com/2025/07/10/pVQTbdO.jpg" alt="活动照4" />
+  <img src="https://s21.ax1x.com/2025/07/13/pVlI054.jpg" alt="活动照2" />
+  <img src="https://s21.ax1x.com/2025/07/13/pVlIUbT.jpg" alt="活动照3" />
+  <img src="https://s21.ax1x.com/2025/07/13/pVlIwaF.jpg" alt="活动照4" />
   <!-- 继续添加图片 -->
 </div>
