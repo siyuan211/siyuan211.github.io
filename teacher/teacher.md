@@ -1,7 +1,7 @@
 ---
-title: 老师介绍
+permalink: /teacher/
+title: 老师
 layout: archive
-permalink: /teachers/
 ---
 
 # 感谢每一位老师的辛勤付出
