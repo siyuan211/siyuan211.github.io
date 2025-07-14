@@ -1,6 +1,6 @@
 ---
-layout: page
 title: 老师
+layout: single
 permalink: /teacher/
 ---
 
