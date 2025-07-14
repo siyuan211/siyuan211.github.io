@@ -1,54 +1,55 @@
 ---
-permalink: /teacher/
+layout: page
 title: 老师
-layout: archive
+permalink: /teacher/
 ---
 
 <style>
-.teacher-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+.teacher-section {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
+  justify-content: center;
   margin-top: 2rem;
 }
 
 .teacher-card {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
+  width: 280px;
   padding: 1rem;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
   text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
   color: #fff;
-  backdrop-filter: blur(8px);
   transition: transform 0.3s ease;
 }
 
 .teacher-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .teacher-card img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
-  margin-bottom: 0.8rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 .teacher-name {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: bold;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .teacher-intro {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 </style>
 
-## 👩‍🏫 我们的老师
+## 👨‍🏫 我们敬爱的老师们
 
-<div class="teacher-gallery">
+<div class="teacher-section">
 
   <div class="teacher-card">
     <img src="https://你的图床链接1.jpg" alt="张老师">
@@ -68,6 +69,4 @@ layout: archive
     <div class="teacher-intro">严中有爱，教学有方，带领我们征服物理难题。</div>
   </div>
 
-  <!-- 继续添加更多老师 -->
-  
 </div>
