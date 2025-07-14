@@ -23,8 +23,8 @@ main:
   - title: "大事件"
     url: /big/
     
-  - title: "老师"
-    url: /teacher/
+  #- title: "老师"
+    #url: /teacher/
     
   # - title: "CV"
   #   url: /cv-json/
