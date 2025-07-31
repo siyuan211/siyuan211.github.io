@@ -22,8 +22,11 @@ main:
         
   - title: "大事件"
     url: /big/
-    
-  #- title: "老师"
+
+  - title: 首页
+  url: /  
+  
+#- title: "老师"
     #url: /teacher/
     
   # - title: "CV"
