@@ -24,7 +24,7 @@ main:
     url: /big/
 
   - title: 首页
-  url: /  
+    url: /  
   
 #- title: "老师"
     #url: /teacher/
