@@ -1,0 +1,95 @@
+---
+layout: default
+title: 名人名事
+permalink: /thing/
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>名人名事</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: linear-gradient(to bottom right, #2c3e50, #3498db);
+      color: #fff;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #eee;
+    }
+
+    .card a {
+      color: #00cfff;
+      text-decoration: none;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>名人名事</h1>
+
+  <div class="card-grid">
+    {% for item in site.thing %}
+      <div class="card">
+        <h3>{{ item.title }}</h3>
+        {% if item.excerpt %}
+          <p>{{ item.excerpt | strip_html | truncate: 80 }}</p>
+        {% endif %}
+        <a href="{{ item.url | relative_url }}">了解更多 →</a>
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
