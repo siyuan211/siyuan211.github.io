@@ -1,8 +1,104 @@
 ---
-layout: single
+layout: none
 title: 作业
 permalink: /homework/
 ---
 
-[点击跳转作业](https://wwr.lanzoui.com/b00yad6pvg)  
-🔐 密码：`gpx8`（仅供参考）
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      background: #121212;
+      color: #eee;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+      margin: 0;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #00bfff;
+      margin-bottom: 1.5rem;
+      animation: fadeInDown 1s ease forwards;
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    a.download-link {
+      display: inline-block;
+      margin: 1.5rem 0;
+      padding: 0.8rem 1.6rem;
+      background-color: #00bfff;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+      animation: fadeInUp 1s ease 0.5s forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    a.download-link:hover {
+      background-color: #009acd;
+    }
+
+    .password {
+      font-size: 1.1rem;
+      background: rgba(255,255,255,0.1);
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 0.3rem;
+      animation: fadeInUp 1s ease 0.7s forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    @keyframes fadeInDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      a.download-link {
+        font-size: 1rem;
+        padding: 0.7rem 1.3rem;
+      }
+
+      .password {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>{{ page.title }}</h1>
+  <a class="download-link" href="https://wwr.lanzoui.com/b00yad6pvg" target="_blank" rel="noopener noreferrer">点击跳转作业</a>
+  <div class="password">🔐 密码：<code>gpx8</code>（仅供参考）</div>
+</body>
+</html>
