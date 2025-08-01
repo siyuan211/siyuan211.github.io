@@ -6,7 +6,7 @@ layout: none
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>欢迎来到我们的世界</title>
+  <title>欢迎来到我们的空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -79,7 +79,7 @@ layout: none
     .card {
       background: rgba(255, 255, 255, 0.08);
       border-radius: 10px;
-      padding: 1.2rem;
+      padding: 1.5rem;
       width: 250px;
       text-align: left;
       box-shadow: 0 2px 10px rgba(0,0,0,0.4);
@@ -93,11 +93,19 @@ layout: none
     .card h3 {
       color: #fff;
       margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    .btn-link {
+      color: #87cefa;
+      text-decoration: underline;
+      font-size: 0.95rem;
     }
 
     .card p {
       font-size: 0.95rem;
       color: #ddd;
+      margin-bottom: 0.5rem;
     }
 
     @media screen and (max-width: 600px) {
@@ -108,31 +116,40 @@ layout: none
       p {
         font-size: 1rem;
       }
+
+      .section {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
   <div class="overlay">
-    <h1>欢迎来到我们的世界</h1>
+    <h1>欢迎来到我的个人空间</h1>
     <p>我们记录、分享、表达每一份成长的痕迹。从大事件到日常作业，从名人名事到联系方式，一切都在这里。</p>
     <a href="/achievement/" class="btn">查看我们的成就</a>
 
     <div class="section">
       <div class="card">
-        <h3><a href="/big/" style="color: #87cefa;">大事件</a></h3>
-        <p>记录了我们经历的重要时刻，每一个都是记忆的印章。</p>
+        <h3>大事件</h3>
+        <p>记录我们经历的重要时刻，每一个都是记忆的印章。</p>
+        <a href="/big/" class="btn-link">进入板块 →</a>
       </div>
       <div class="card">
-        <h3><a href="/thing/" style="color: #87cefa;">名人名事</a></h3>
+        <h3>名人名事</h3>
         <p>介绍我们班的优秀人物，他们的故事值得铭记。</p>
+        <a href="/thing/" class="btn-link">进入板块 →</a>
       </div>
       <div class="card">
-        <h3><a href="/homework/" style="color: #87cefa;">作业成果</a></h3>
+        <h3>作业成果</h3>
         <p>我们完成的代表性作品集锦。</p>
+        <a href="/homework/" class="btn-link">进入板块 →</a>
       </div>
       <div class="card">
-        <h3><a href="/contact/" style="color: #87cefa;">联系我们</a></h3>
+        <h3>联系我们</h3>
         <p>想留言或者有建议？这里可以联系到我们。</p>
+        <a href="/contact/" class="btn-link">进入板块 →</a>
       </div>
     </div>
   </div>
