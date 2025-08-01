@@ -1,157 +1,54 @@
 ---
 layout: none
+permalink: /
 ---
 
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>欢迎来到我们的空间</title>
+  <title>欢迎来到我们的世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: url('https://s21.ax1x.com/2025/07/11/pVlV63j.webp') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Helvetica Neue', sans-serif;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      min-height: 100vh;
-      padding: 4rem 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      animation: fadeInDown 1s ease-in-out;
-    }
-
-    p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin-bottom: 2rem;
-      animation: fadeInUp 1s ease-in-out;
-    }
-
-    .btn {
-      padding: 0.8rem 1.5rem;
-      background-color: #00bfff;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #009acd;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .section {
-      margin-top: 3rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 10px;
-      padding: 1.5rem;
-      width: 250px;
-      text-align: left;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      color: #fff;
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
-    }
-
-    .btn-link {
-      color: #87cefa;
-      text-decoration: underline;
-      font-size: 0.95rem;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: #ddd;
-      margin-bottom: 0.5rem;
-    }
-
-    @media screen and (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      .section {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+  <link href="/assets/css/home.css" rel="stylesheet">
 </head>
 <body>
-  <div class="overlay">
-    <h1>欢迎来到我的个人空间</h1>
-    <p>我们记录、分享、表达每一份成长的痕迹。从大事件到日常作业，从名人名事到联系方式，一切都在这里。</p>
-    <a href="/achievement/" class="btn">查看我们的成就</a>
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="overlay fade-in">
+    <h1 class="fade-in">欢迎来到我们的世界</h1>
+    <p class="fade-in">我们记录、分享、表达每一份成长的痕迹。从大事件到日常作业，从名人名事到联系方式，一切都在这里。</p>
+    <a href="/achievement/" class="btn fade-in">查看我们的成就</a>
 
     <div class="section">
-      <div class="card">
-        <h3>大事件</h3>
-        <p>记录我们经历的重要时刻，每一个都是记忆的印章。</p>
-        <a href="/big/" class="btn-link">进入板块 →</a>
+      <div class="card fade-in">
+        <h3><a href="/big/" style="color: #87cefa;">大事件</a></h3>
+        <p>记录了我们经历的重要时刻，每一个都是记忆的印章。</p>
       </div>
-      <div class="card">
-        <h3>名人名事</h3>
+      <div class="card fade-in">
+        <h3><a href="/thing/" style="color: #87cefa;">名人名事</a></h3>
         <p>介绍我们班的优秀人物，他们的故事值得铭记。</p>
-        <a href="/thing/" class="btn-link">进入板块 →</a>
       </div>
-      <div class="card">
-        <h3>作业成果</h3>
+      <div class="card fade-in">
+        <h3><a href="/homework/" style="color: #87cefa;">作业成果</a></h3>
         <p>我们完成的代表性作品集锦。</p>
-        <a href="/homework/" class="btn-link">进入板块 →</a>
       </div>
-      <div class="card">
-        <h3>联系我们</h3>
+      <div class="card fade-in">
+        <h3><a href="/contact/" style="color: #87cefa;">联系我们</a></h3>
         <p>想留言或者有建议？这里可以联系到我们。</p>
-        <a href="/contact/" class="btn-link">进入板块 →</a>
       </div>
     </div>
   </div>
+
+  <script>
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+      const fadeElems = document.querySelectorAll('.fade-in');
+      fadeElems.forEach((el, i) => {
+        el.style.animationDelay = `${i * 0.2}s`;
+      });
+    });
+  </script>
 </body>
 </html>
