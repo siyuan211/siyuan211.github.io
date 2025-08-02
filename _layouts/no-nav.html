@@ -92,5 +92,14 @@
 </head>
 <body>
   {{ content }}
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('h1, .download-link, .password').forEach(el => {
+        el.style.opacity = '';
+        el.style.transform = '';
+      });
+    });
+  </script>
 </body>
 </html>
