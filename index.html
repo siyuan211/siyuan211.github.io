@@ -27,32 +27,112 @@ permalink: /
       background-size: cover;
     }
 
-    /* 顶部公告栏 */
-    .notice-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: #ff9800;
-      color: #fff;
-      padding: 0.75rem 1rem;
-      font-weight: bold;
-      text-align: center;
-      z-index: 2000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    <!-- 公告栏 -->
+<div id="announcement-bar" role="region" aria-label="网站公告" tabindex="0">
+  <span>🎉 欢迎来到八班专属博客！新功能上线，快来体验吧！</span>
+  <button id="announcement-close" aria-label="关闭公告栏">&times;</button>
+</div>
+
+<style>
+  #announcement-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: linear-gradient(90deg, #004e92, #000428);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    z-index: 1200; /* 比导航高 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    overflow: hidden;
+    transform: translateY(-100%);
+    animation: slideDownIn 0.5s forwards;
+  }
+
+  #announcement-bar span {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  #announcement-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    margin-left: 1rem;
+    padding: 0;
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+
+  #announcement-close:hover,
+  #announcement-close:focus {
+    color: #ff6f61;
+    outline: none;
+  }
+
+  /* 关闭动画 */
+  #announcement-bar.closing {
+    animation: slideOutRight 0.5s forwards;
+  }
+
+  /* 入口动画 */
+  @keyframes slideDownIn {
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  /* 关闭动画，右侧滑出 + 透明 */
+  @keyframes slideOutRight {
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  /* 手机端字体和按钮大小调整 */
+  @media (max-width: 600px) {
+    #announcement-bar {
+      font-size: 0.9rem;
+      height: 40px;
+      padding: 0 0.8rem;
     }
 
-    .notice-bar .close-btn {
-      position: absolute;
-      right: 1rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: #fff;
+    #announcement-close {
+      font-size: 1.4rem;
+      margin-left: 0.8rem;
     }
+  }
+</style>
+
+<script>
+  const announcementBar = document.getElementById('announcement-bar');
+  const closeBtn = document.getElementById('announcement-close');
+
+  closeBtn.addEventListener('click', () => {
+    announcementBar.classList.add('closing');
+    // 关闭动画结束后移除公告栏元素
+    announcementBar.addEventListener('animationend', () => {
+      announcementBar.style.display = 'none';
+      // 可选：也可以存储状态避免下次刷新继续显示
+      // localStorage.setItem('announcementClosed', 'true');
+    }, { once: true });
+  });
+
+  // 可选：判断是否之前关闭过
+  // if (localStorage.getItem('announcementClosed') === 'true') {
+  //   announcementBar.style.display = 'none';
+  // }
+</script>
 
     /* 导航栏 */
     nav.navbar {
