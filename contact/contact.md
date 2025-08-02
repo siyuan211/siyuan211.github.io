@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: no-nav
 title: 联系我们
 permalink: /contact/
 ---
