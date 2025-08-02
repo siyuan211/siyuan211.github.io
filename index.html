@@ -18,67 +18,50 @@ permalink: /
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
+
     body {
       background: url('https://s21.ax1x.com/2025/07/11/pVlV63j.webp') center center fixed no-repeat;
       background-size: cover;
       transition: background-size 0.5s ease;
-      padding-top: 3.5rem; /* 顶部浮窗高度预留 */
     }
+
     body.scrolled {
       background-size: 110% auto;
     }
 
-    /* 公告弹窗 */
-    #announcement {
+    /* 公告弹窗样式 */
+    .notice-banner {
       position: fixed;
-      top: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 960px;
-      background: #007acc;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 1rem;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 2000;
-      animation: slideDown 0.3s ease forwards;
-      box-sizing: border-box;
+      background: linear-gradient(to right, #ff5f6d, #ffc371);
+      color: #000;
+      text-align: center;
+      padding: 0.8rem 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
     }
 
-    #announcement.hide {
-      animation: slideOutRight 0.4s ease forwards;
-    }
-
-    #announcement button.close-btn {
+    .notice-banner .close-btn {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
       background: transparent;
       border: none;
-      color: white;
       font-size: 1.2rem;
       cursor: pointer;
-      padding: 0;
-      line-height: 1;
-      user-select: none;
-      transition: color 0.3s ease;
-    }
-    #announcement button.close-btn:hover {
-      color: #ffa;
-    }
-
-    @keyframes slideDown {
-      from { transform: translate(-50%, -100%); opacity: 0; }
-      to { transform: translate(-50%, 0); opacity: 1; }
-    }
-    @keyframes slideOutRight {
-      from { transform: translate(-50%, 0); opacity: 1; }
-      to { transform: translate(150%, 0); opacity: 0; }
+      color: #000;
     }
 
     nav.navbar {
       position: fixed;
-      top: 3.5rem; /* 公告高度 */
+      top: 3rem; /* 向下推导航栏以避开公告 */
       left: 0; right: 0;
       display: flex;
       justify-content: space-between;
@@ -88,16 +71,19 @@ permalink: /
       background: rgba(0, 0, 0, 0.3);
       transition: background 0.3s ease;
     }
+
     nav.navbar.scrolled {
       background: rgba(0, 0, 0, 0.85);
       box-shadow: 0 2px 8px rgba(0,0,0,0.6);
     }
+
     nav .nav-logo {
       color: #00bfff;
       font-weight: 700;
       font-size: 1.5rem;
       text-decoration: none;
     }
+
     nav .nav-links a {
       color: #fff;
       margin-left: 1.5rem;
@@ -105,6 +91,7 @@ permalink: /
       font-weight: 500;
       transition: color 0.3s ease;
     }
+
     nav .nav-links a:hover {
       color: #00bfff;
     }
@@ -112,7 +99,7 @@ permalink: /
     .overlay {
       background-color: rgba(0, 0, 0, 0.65);
       min-height: 100vh;
-      padding: 6rem 1rem 3rem;
+      padding: 8rem 1rem 3rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -121,12 +108,14 @@ permalink: /
       margin: 0 auto;
       box-sizing: border-box;
     }
+
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
       animation: fadeInDown 1s ease forwards;
       opacity: 0;
     }
+
     p.intro {
       font-size: 1.2rem;
       max-width: 600px;
@@ -134,6 +123,7 @@ permalink: /
       animation: fadeInUp 1s ease 0.5s forwards;
       opacity: 0;
     }
+
     .btn {
       padding: 0.8rem 1.5rem;
       background: linear-gradient(90deg, #00bfff, #007acc);
@@ -146,10 +136,12 @@ permalink: /
       margin-bottom: 3rem;
       display: inline-block;
     }
+
     .btn:hover {
       background: linear-gradient(90deg, #007acc, #005f99);
       box-shadow: 0 8px 16px rgba(0,122,204,0.7);
     }
+
     .section {
       display: flex;
       flex-wrap: wrap;
@@ -157,6 +149,7 @@ permalink: /
       gap: 1.5rem;
       width: 100%;
     }
+
     .card {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
@@ -168,20 +161,24 @@ permalink: /
       cursor: pointer;
       animation: float 3s ease-in-out infinite;
     }
+
     .card:hover {
       transform: translateY(-8px);
       box-shadow: 0 12px 30px rgba(0,191,255,0.5);
     }
+
     .card h3 {
       color: #fff;
       margin-bottom: 0.5rem;
       font-size: 1.3rem;
     }
+
     .btn-link {
       color: #87cefa;
       text-decoration: underline;
       font-size: 0.95rem;
     }
+
     .card p {
       font-size: 0.95rem;
       color: #ddd;
@@ -192,10 +189,12 @@ permalink: /
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-6px); }
     }
+
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -218,6 +217,7 @@ permalink: /
       transition: opacity 0.3s ease;
       z-index: 1100;
     }
+
     #backToTop.show {
       opacity: 1;
       pointer-events: auto;
@@ -233,17 +233,22 @@ permalink: /
       .card {
         width: 90%;
       }
+      nav.navbar {
+        top: 4rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- 公告弹窗 -->
-  <div id="announcement" role="region" aria-label="网站公告" tabindex="0">
-    欢迎来到八班专属博客！最新活动正在火热进行中，快来参与吧！
-    <button class="close-btn" aria-label="关闭公告">&times;</button>
+
+  <!-- 公告浮动栏 -->
+  <div class="notice-banner" id="notice">
+    🎉 欢迎访问我们的博客！开学季即将来临，请关注课程安排通知。
+    <button class="close-btn" onclick="document.getElementById('notice').style.display='none'">×</button>
   </div>
 
-  <nav class="navbar" role="navigation" aria-label="主导航">
+  <!-- 导航栏 -->
+  <nav class="navbar">
     <a href="/" class="nav-logo">八班专属博客</a>
     <div class="nav-links">
       <a href="/achievement/">成就</a>
@@ -253,23 +258,24 @@ permalink: /
     </div>
   </nav>
 
+  <!-- 内容区域 -->
   <div class="overlay">
     <h1>欢迎来到我的个人空间</h1>
     <p class="intro">我们记录、分享、表达每一份成长的痕迹。从作业到联系，全部在这里。</p>
     <a href="/achievement/" class="btn">查看我们的成就</a>
 
     <div class="section">
-      <div class="card" onclick="location.href='/thing/'" tabindex="0" role="link" aria-label="进入名人名事">
+      <div class="card" onclick="location.href='/thing/'">
         <h3>名人名事</h3>
         <p>介绍我们班的优秀人物，他们的故事值得铭记。</p>
         <a href="/thing/" class="btn-link">进入板块 →</a>
       </div>
-      <div class="card" onclick="location.href='/homework/'" tabindex="0" role="link" aria-label="进入作业成果">
+      <div class="card" onclick="location.href='/homework/'">
         <h3>作业成果</h3>
         <p>我们完成的代表性作品集锦。</p>
         <a href="/homework/" class="btn-link">进入板块 →</a>
       </div>
-      <div class="card" onclick="location.href='/contact/'" tabindex="0" role="link" aria-label="进入联系我们">
+      <div class="card" onclick="location.href='/contact/'">
         <h3>联系我们</h3>
         <p>想留言或者有建议？这里可以联系到我们。</p>
         <a href="/contact/" class="btn-link">进入板块 →</a>
@@ -280,33 +286,6 @@ permalink: /
   <button id="backToTop" aria-label="回到顶部">↑</button>
 
   <script>
-    // 公告弹窗关闭逻辑，记忆关闭状态
-    const announcement = document.getElementById('announcement');
-    const closeBtn = announcement.querySelector('.close-btn');
-    const storageKey = 'announcementClosed';
-
-    function closeAnnouncement() {
-      announcement.classList.add('hide');
-      // 延时动画结束后彻底隐藏
-      setTimeout(() => {
-        announcement.style.display = 'none';
-        // 减少页面顶部padding
-        document.body.style.paddingTop = '0';
-      }, 400);
-      localStorage.setItem(storageKey, 'true');
-    }
-
-    closeBtn.addEventListener('click', closeAnnouncement);
-
-    // 页面载入时检查是否关闭过公告
-    window.addEventListener('DOMContentLoaded', () => {
-      if (localStorage.getItem(storageKey) === 'true') {
-        announcement.style.display = 'none';
-        document.body.style.paddingTop = '0';
-      }
-    });
-
-    // 滚动监听nav和背景动画
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
         document.body.classList.add('scrolled');
@@ -319,7 +298,6 @@ permalink: /
       }
     });
 
-    // 回到顶部按钮事件
     document.getElementById('backToTop').addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
