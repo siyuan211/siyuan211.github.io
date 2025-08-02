@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: no-nav
 permalink: /achievement/
 title: 我们的成就
 ---
