@@ -1,11 +1,86 @@
 <!DOCTYPE html>
-<html lang="zh">
-  <head>
-    {% include head.html %}
-  </head>
-  <body>
-    <main role="main">
-      {{ content }}
-    </main>
-  </body>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem 1rem;
+      background: #121212;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #eee;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #00bfff;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0.5rem auto 1.5rem;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      will-change: opacity, transform;
+      margin-bottom: 2rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+    }
+  </style>
+</head>
+<body>
+  {{ content }}
+</body>
 </html>
