@@ -18,20 +18,68 @@ permalink: /
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
-
     body {
       background: url('https://s21.ax1x.com/2025/07/11/pVlV63j.webp') center center fixed no-repeat;
       background-size: cover;
       transition: background-size 0.5s ease;
+      padding-top: 3.5rem; /* 顶部浮窗高度预留 */
     }
-
     body.scrolled {
       background-size: 110% auto;
     }
 
+    /* 公告弹窗 */
+    #announcement {
+      position: fixed;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 960px;
+      background: #007acc;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+      z-index: 2000;
+      animation: slideDown 0.3s ease forwards;
+      box-sizing: border-box;
+    }
+
+    #announcement.hide {
+      animation: slideOutRight 0.4s ease forwards;
+    }
+
+    #announcement button.close-btn {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+    #announcement button.close-btn:hover {
+      color: #ffa;
+    }
+
+    @keyframes slideDown {
+      from { transform: translate(-50%, -100%); opacity: 0; }
+      to { transform: translate(-50%, 0); opacity: 1; }
+    }
+    @keyframes slideOutRight {
+      from { transform: translate(-50%, 0); opacity: 1; }
+      to { transform: translate(150%, 0); opacity: 0; }
+    }
+
     nav.navbar {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 3.5rem; /* 公告高度 */
+      left: 0; right: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -40,19 +88,16 @@ permalink: /
       background: rgba(0, 0, 0, 0.3);
       transition: background 0.3s ease;
     }
-
     nav.navbar.scrolled {
       background: rgba(0, 0, 0, 0.85);
       box-shadow: 0 2px 8px rgba(0,0,0,0.6);
     }
-
     nav .nav-logo {
       color: #00bfff;
       font-weight: 700;
       font-size: 1.5rem;
       text-decoration: none;
     }
-
     nav .nav-links a {
       color: #fff;
       margin-left: 1.5rem;
@@ -60,7 +105,6 @@ permalink: /
       font-weight: 500;
       transition: color 0.3s ease;
     }
-
     nav .nav-links a:hover {
       color: #00bfff;
     }
@@ -77,14 +121,12 @@ permalink: /
       margin: 0 auto;
       box-sizing: border-box;
     }
-
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
       animation: fadeInDown 1s ease forwards;
       opacity: 0;
     }
-
     p.intro {
       font-size: 1.2rem;
       max-width: 600px;
@@ -92,7 +134,6 @@ permalink: /
       animation: fadeInUp 1s ease 0.5s forwards;
       opacity: 0;
     }
-
     .btn {
       padding: 0.8rem 1.5rem;
       background: linear-gradient(90deg, #00bfff, #007acc);
@@ -105,12 +146,10 @@ permalink: /
       margin-bottom: 3rem;
       display: inline-block;
     }
-
     .btn:hover {
       background: linear-gradient(90deg, #007acc, #005f99);
       box-shadow: 0 8px 16px rgba(0,122,204,0.7);
     }
-
     .section {
       display: flex;
       flex-wrap: wrap;
@@ -118,7 +157,6 @@ permalink: /
       gap: 1.5rem;
       width: 100%;
     }
-
     .card {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
@@ -130,24 +168,20 @@ permalink: /
       cursor: pointer;
       animation: float 3s ease-in-out infinite;
     }
-
     .card:hover {
       transform: translateY(-8px);
       box-shadow: 0 12px 30px rgba(0,191,255,0.5);
     }
-
     .card h3 {
       color: #fff;
       margin-bottom: 0.5rem;
       font-size: 1.3rem;
     }
-
     .btn-link {
       color: #87cefa;
       text-decoration: underline;
       font-size: 0.95rem;
     }
-
     .card p {
       font-size: 0.95rem;
       color: #ddd;
@@ -158,12 +192,10 @@ permalink: /
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-6px); }
     }
-
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -186,7 +218,6 @@ permalink: /
       transition: opacity 0.3s ease;
       z-index: 1100;
     }
-
     #backToTop.show {
       opacity: 1;
       pointer-events: auto;
@@ -206,7 +237,13 @@ permalink: /
   </style>
 </head>
 <body>
-  <nav class="navbar">
+  <!-- 公告弹窗 -->
+  <div id="announcement" role="region" aria-label="网站公告" tabindex="0">
+    欢迎来到八班专属博客！最新活动正在火热进行中，快来参与吧！
+    <button class="close-btn" aria-label="关闭公告">&times;</button>
+  </div>
+
+  <nav class="navbar" role="navigation" aria-label="主导航">
     <a href="/" class="nav-logo">八班专属博客</a>
     <div class="nav-links">
       <a href="/achievement/">成就</a>
@@ -243,6 +280,33 @@ permalink: /
   <button id="backToTop" aria-label="回到顶部">↑</button>
 
   <script>
+    // 公告弹窗关闭逻辑，记忆关闭状态
+    const announcement = document.getElementById('announcement');
+    const closeBtn = announcement.querySelector('.close-btn');
+    const storageKey = 'announcementClosed';
+
+    function closeAnnouncement() {
+      announcement.classList.add('hide');
+      // 延时动画结束后彻底隐藏
+      setTimeout(() => {
+        announcement.style.display = 'none';
+        // 减少页面顶部padding
+        document.body.style.paddingTop = '0';
+      }, 400);
+      localStorage.setItem(storageKey, 'true');
+    }
+
+    closeBtn.addEventListener('click', closeAnnouncement);
+
+    // 页面载入时检查是否关闭过公告
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem(storageKey) === 'true') {
+        announcement.style.display = 'none';
+        document.body.style.paddingTop = '0';
+      }
+    });
+
+    // 滚动监听nav和背景动画
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
         document.body.classList.add('scrolled');
@@ -255,6 +319,7 @@ permalink: /
       }
     });
 
+    // 回到顶部按钮事件
     document.getElementById('backToTop').addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
