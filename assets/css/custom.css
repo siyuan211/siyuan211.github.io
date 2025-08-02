@@ -1,13 +1,10 @@
-/* 设置网页背景 */
+/* 设置网页纯黑背景 */
 body {
-  background-image: url('https://s21.ax1x.com/2025/07/11/pVlV63j.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #000000; /* 纯黑背景 */
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 18px; /* 更大的字体 */
+  font-size: 18px;
   line-height: 1.8;
   color: #ffffff;
   overflow-x: hidden;
@@ -19,7 +16,7 @@ body {
   width: 90%;
   margin: auto;
   padding: 2rem 1.5rem;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.65); /* 半透明深黑色背景 */
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
   color: #ffffff;
