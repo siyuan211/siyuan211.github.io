@@ -25,7 +25,6 @@ permalink: /
       transition: background-size 0.5s ease;
     }
 
-    /* 视差放大效果 */
     body.scrolled {
       background-size: 110% auto;
     }
@@ -41,6 +40,7 @@ permalink: /
       background: rgba(0, 0, 0, 0.3);
       transition: background 0.3s ease;
     }
+
     nav.navbar.scrolled {
       background: rgba(0, 0, 0, 0.85);
       box-shadow: 0 2px 8px rgba(0,0,0,0.6);
@@ -52,6 +52,7 @@ permalink: /
       font-size: 1.5rem;
       text-decoration: none;
     }
+
     nav .nav-links a {
       color: #fff;
       margin-left: 1.5rem;
@@ -59,6 +60,7 @@ permalink: /
       font-weight: 500;
       transition: color 0.3s ease;
     }
+
     nav .nav-links a:hover {
       color: #00bfff;
     }
@@ -66,7 +68,7 @@ permalink: /
     .overlay {
       background-color: rgba(0, 0, 0, 0.65);
       min-height: 100vh;
-      padding: 6rem 1rem 3rem; /* 6rem 留导航栏空间 */
+      padding: 6rem 1rem 3rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -103,6 +105,7 @@ permalink: /
       margin-bottom: 3rem;
       display: inline-block;
     }
+
     .btn:hover {
       background: linear-gradient(90deg, #007acc, #005f99);
       box-shadow: 0 8px 16px rgba(0,122,204,0.7);
@@ -127,27 +130,30 @@ permalink: /
       cursor: pointer;
       animation: float 3s ease-in-out infinite;
     }
+
     .card:hover {
       transform: translateY(-8px);
       box-shadow: 0 12px 30px rgba(0,191,255,0.5);
     }
+
     .card h3 {
       color: #fff;
       margin-bottom: 0.5rem;
       font-size: 1.3rem;
     }
+
     .btn-link {
       color: #87cefa;
       text-decoration: underline;
       font-size: 0.95rem;
     }
+
     .card p {
       font-size: 0.95rem;
       color: #ddd;
       margin-bottom: 0.5rem;
     }
 
-    /* 浮动动画 */
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-6px); }
@@ -157,12 +163,12 @@ permalink: /
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* 回到顶部按钮 */
     #backToTop {
       position: fixed;
       bottom: 2rem;
@@ -180,19 +186,15 @@ permalink: /
       transition: opacity 0.3s ease;
       z-index: 1100;
     }
+
     #backToTop.show {
       opacity: 1;
       pointer-events: auto;
     }
 
-    /* 响应式 */
     @media screen and (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      p.intro {
-        font-size: 1rem;
-      }
+      h1 { font-size: 2rem; }
+      p.intro { font-size: 1rem; }
       .section {
         flex-direction: column;
         align-items: center;
@@ -208,7 +210,6 @@ permalink: /
     <a href="/" class="nav-logo">八班专属博客</a>
     <div class="nav-links">
       <a href="/achievement/">成就</a>
-      <a href="/big/">大事件</a>
       <a href="/thing/">名人名事</a>
       <a href="/homework/">作业成果</a>
       <a href="/contact/">联系我们</a>
@@ -217,15 +218,10 @@ permalink: /
 
   <div class="overlay">
     <h1>欢迎来到我的个人空间</h1>
-    <p class="intro">我们记录、分享、表达每一份成长的痕迹。从大事件到日常作业，从名人名事到联系方式，一切都在这里。</p>
+    <p class="intro">我们记录、分享、表达每一份成长的痕迹。从作业到联系，全部在这里。</p>
     <a href="/achievement/" class="btn">查看我们的成就</a>
 
     <div class="section">
-      <div class="card" onclick="location.href='/big/'" tabindex="0" role="link" aria-label="进入大事件">
-        <h3>大事件</h3>
-        <p>记录我们经历的重要时刻，每一个都是记忆的印章。</p>
-        <a href="/big/" class="btn-link">进入板块 →</a>
-      </div>
       <div class="card" onclick="location.href='/thing/'" tabindex="0" role="link" aria-label="进入名人名事">
         <h3>名人名事</h3>
         <p>介绍我们班的优秀人物，他们的故事值得铭记。</p>
@@ -247,7 +243,6 @@ permalink: /
   <button id="backToTop" aria-label="回到顶部">↑</button>
 
   <script>
-    // 监听滚动，切换导航和背景视差
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
         document.body.classList.add('scrolled');
@@ -260,7 +255,6 @@ permalink: /
       }
     });
 
-    // 回到顶部按钮事件
     document.getElementById('backToTop').addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
