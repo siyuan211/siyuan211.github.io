@@ -10,6 +10,7 @@ permalink: /
   <title>欢迎来到我的个人空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    /* 基础样式 */
     html, body {
       margin: 0;
       padding: 0;
@@ -17,127 +18,52 @@ permalink: /
       color: #fff;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      background-color: #0B1220; /* 全黑背景 */
     }
 
-    body {
-  background-color: #0B1220;
-  /* 如果不需要背景图，可以删除或注释掉背景图相关的属性 */
-  /* background-size: cover; */
-}
-      background-size: cover;
+    /* 公告栏 */
+    .notice-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 48px;
+      background: linear-gradient(90deg, #004e92, #000428);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+      z-index: 1200; /* 高于导航栏 */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      user-select: none;
     }
 
-    <!-- 公告栏 -->
-<div id="announcement-bar" role="region" aria-label="网站公告" tabindex="0">
-  <span>🎉 欢迎来到八班专属博客！新功能上线，快来体验吧！</span>
-  <button id="announcement-close" aria-label="关闭公告栏">&times;</button>
-</div>
-
-<style>
-  #announcement-bar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: linear-gradient(90deg, #004e92, #000428);
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 500;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1rem;
-    z-index: 1200; /* 比导航高 */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    overflow: hidden;
-    transform: translateY(-100%);
-    animation: slideDownIn 0.5s forwards;
-  }
-
-  #announcement-bar span {
-    flex-grow: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  #announcement-close {
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 1.6rem;
-    line-height: 1;
-    cursor: pointer;
-    margin-left: 1rem;
-    padding: 0;
-    transition: color 0.3s ease;
-    user-select: none;
-  }
-
-  #announcement-close:hover,
-  #announcement-close:focus {
-    color: #ff6f61;
-    outline: none;
-  }
-
-  /* 关闭动画 */
-  #announcement-bar.closing {
-    animation: slideOutRight 0.5s forwards;
-  }
-
-  /* 入口动画 */
-  @keyframes slideDownIn {
-    to {
-      transform: translateY(0);
-    }
-  }
-
-  /* 关闭动画，右侧滑出 + 透明 */
-  @keyframes slideOutRight {
-    to {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-  }
-
-  /* 手机端字体和按钮大小调整 */
-  @media (max-width: 600px) {
-    #announcement-bar {
-      font-size: 0.9rem;
-      height: 40px;
-      padding: 0 0.8rem;
+    .notice-bar .close-btn {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      user-select: none;
     }
 
-    #announcement-close {
-      font-size: 1.4rem;
-      margin-left: 0.8rem;
+    .notice-bar .close-btn:hover,
+    .notice-bar .close-btn:focus {
+      color: #ff6f61;
+      outline: none;
     }
-  }
-</style>
-
-<script>
-  const announcementBar = document.getElementById('announcement-bar');
-  const closeBtn = document.getElementById('announcement-close');
-
-  closeBtn.addEventListener('click', () => {
-    announcementBar.classList.add('closing');
-    // 关闭动画结束后移除公告栏元素
-    announcementBar.addEventListener('animationend', () => {
-      announcementBar.style.display = 'none';
-      // 可选：也可以存储状态避免下次刷新继续显示
-      // localStorage.setItem('announcementClosed', 'true');
-    }, { once: true });
-  });
-
-  // 可选：判断是否之前关闭过
-  // if (localStorage.getItem('announcementClosed') === 'true') {
-  //   announcementBar.style.display = 'none';
-  // }
-</script>
 
     /* 导航栏 */
     nav.navbar {
       position: fixed;
-      top: 3rem;
+      top: 48px; /* 默认公告栏高度 */
       left: 0;
       right: 0;
       display: flex;
@@ -149,6 +75,7 @@ permalink: /
       transition: top 0.3s ease;
     }
 
+    /* 关闭公告栏后，导航栏上移 */
     body.no-notice nav.navbar {
       top: 0;
     }
@@ -172,8 +99,9 @@ permalink: /
       color: #00bfff;
     }
 
+    /* 主体内容 */
     .overlay {
-      padding-top: 8rem;
+      padding-top: 7.5rem; /* 导航栏 + 公告栏高度 */
       padding-bottom: 3rem;
       max-width: 960px;
       margin: 0 auto;
@@ -261,7 +189,7 @@ permalink: /
   <!-- 公告栏 -->
   <div class="notice-bar" id="noticeBar">
     🎉 欢迎访问我们的八班博客！更多精彩请持续关注！网站创建时间7.11 创建人：刘思源
-    <button class="close-btn" onclick="closeNotice()">✕</button>
+    <button class="close-btn" aria-label="关闭公告栏" onclick="closeNotice()">✕</button>
   </div>
 
   <!-- 导航栏 -->
@@ -282,17 +210,17 @@ permalink: /
     <a href="/achievement/" class="btn">查看我们的成就</a>
 
     <div class="section">
-      <div class="card" onclick="location.href='/thing/'">
+      <div class="card" onclick="location.href='/thing/'" tabindex="0" role="link" aria-label="进入名人名事">
         <h3>名人名事</h3>
         <p>介绍我们班的优秀人物，他们的故事值得铭记。</p>
         <a href="/thing/" class="btn-link">进入板块 →</a>
       </div>
-      <div class="card" onclick="location.href='/homework/'">
+      <div class="card" onclick="location.href='/homework/'" tabindex="0" role="link" aria-label="进入作业成果">
         <h3>作业成果</h3>
         <p>我们完成的代表性作品集锦。</p>
         <a href="/homework/" class="btn-link">进入板块 →</a>
       </div>
-      <div class="card" onclick="location.href='/contact/'">
+      <div class="card" onclick="location.href='/contact/'" tabindex="0" role="link" aria-label="进入联系我们">
         <h3>联系我们</h3>
         <p>想留言或者有建议？这里可以联系到我们。</p>
         <a href="/contact/" class="btn-link">进入板块 →</a>
