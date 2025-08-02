@@ -11,8 +11,8 @@ permalink: /
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     html, body {
-      margin: 0; padding: 0;
-      height: 100%;
+      margin: 0;
+      padding: 0;
       font-family: 'Helvetica Neue', sans-serif;
       color: #fff;
       overflow-x: hidden;
@@ -22,64 +22,57 @@ permalink: /
     body {
       background: url('https://s21.ax1x.com/2025/07/11/pVlV63j.webp') center center fixed no-repeat;
       background-size: cover;
-      transition: background-size 0.5s ease;
     }
 
-    body.scrolled {
-      background-size: 110% auto;
-    }
-
-    /* 公告弹窗样式 */
-    .notice-banner {
+    /* 顶部公告栏 */
+    .notice-bar {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      z-index: 2000;
-      background: linear-gradient(to right, #ff5f6d, #ffc371);
-      color: #000;
+      background: #ff9800;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      font-weight: bold;
       text-align: center;
-      padding: 0.8rem 1rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      z-index: 2000;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-weight: bold;
     }
 
-    .notice-banner .close-btn {
+    .notice-bar .close-btn {
       position: absolute;
       right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      background: transparent;
-      border: none;
       font-size: 1.2rem;
       cursor: pointer;
-      color: #000;
+      background: none;
+      border: none;
+      color: #fff;
     }
 
+    /* 导航栏 */
     nav.navbar {
       position: fixed;
-      top: 3rem; /* 向下推导航栏以避开公告 */
-      left: 0; right: 0;
+      top: 3rem;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.5);
       z-index: 1000;
-      background: rgba(0, 0, 0, 0.3);
-      transition: background 0.3s ease;
+      transition: top 0.3s ease;
     }
 
-    nav.navbar.scrolled {
-      background: rgba(0, 0, 0, 0.85);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    body.no-notice nav.navbar {
+      top: 0;
     }
 
     nav .nav-logo {
       color: #00bfff;
-      font-weight: 700;
+      font-weight: bold;
       font-size: 1.5rem;
       text-decoration: none;
     }
@@ -97,31 +90,21 @@ permalink: /
     }
 
     .overlay {
-      background-color: rgba(0, 0, 0, 0.65);
-      min-height: 100vh;
-      padding: 8rem 1rem 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      padding-top: 8rem;
+      padding-bottom: 3rem;
       max-width: 960px;
       margin: 0 auto;
-      box-sizing: border-box;
+      text-align: center;
     }
 
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      animation: fadeInDown 1s ease forwards;
-      opacity: 0;
     }
 
     p.intro {
       font-size: 1.2rem;
-      max-width: 600px;
       margin-bottom: 2rem;
-      animation: fadeInUp 1s ease 0.5s forwards;
-      opacity: 0;
     }
 
     .btn {
@@ -147,7 +130,6 @@ permalink: /
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
-      width: 100%;
     }
 
     .card {
@@ -155,11 +137,9 @@ permalink: /
       border-radius: 10px;
       padding: 1.5rem;
       width: 260px;
-      text-align: left;
       box-shadow: 0 8px 20px rgba(0,191,255,0.2);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       cursor: pointer;
-      animation: float 3s ease-in-out infinite;
     }
 
     .card:hover {
@@ -170,13 +150,6 @@ permalink: /
     .card h3 {
       color: #fff;
       margin-bottom: 0.5rem;
-      font-size: 1.3rem;
-    }
-
-    .btn-link {
-      color: #87cefa;
-      text-decoration: underline;
-      font-size: 0.95rem;
     }
 
     .card p {
@@ -185,66 +158,27 @@ permalink: /
       margin-bottom: 0.5rem;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    #backToTop {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: #00bfff;
-      color: #fff;
-      border: none;
-      padding: 0.7rem 1rem;
-      border-radius: 50%;
-      font-size: 1.4rem;
-      cursor: pointer;
-      box-shadow: 0 6px 12px rgba(0,191,255,0.6);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      z-index: 1100;
-    }
-
-    #backToTop.show {
-      opacity: 1;
-      pointer-events: auto;
+    .btn-link {
+      color: #87cefa;
+      text-decoration: underline;
+      font-size: 0.95rem;
     }
 
     @media screen and (max-width: 600px) {
+      .overlay {
+        padding-top: 7rem;
+      }
       h1 { font-size: 2rem; }
-      p.intro { font-size: 1rem; }
-      .section {
-        flex-direction: column;
-        align-items: center;
-      }
-      .card {
-        width: 90%;
-      }
-      nav.navbar {
-        top: 4rem;
-      }
+      .section { flex-direction: column; }
+      .card { width: 90%; }
     }
   </style>
 </head>
 <body>
-
-  <!-- 公告浮动栏 -->
-  <div class="notice-banner" id="notice">
-    🎉 欢迎访问我们的博客！开学季即将来临，请关注课程安排通知。
-    <button class="close-btn" onclick="document.getElementById('notice').style.display='none'">×</button>
+  <!-- 公告栏 -->
+  <div class="notice-bar" id="noticeBar">
+    🎉 欢迎访问我们的八班博客！更多精彩请持续关注！
+    <button class="close-btn" onclick="closeNotice()">✕</button>
   </div>
 
   <!-- 导航栏 -->
@@ -258,7 +192,7 @@ permalink: /
     </div>
   </nav>
 
-  <!-- 内容区域 -->
+  <!-- 主内容 -->
   <div class="overlay">
     <h1>欢迎来到我的个人空间</h1>
     <p class="intro">我们记录、分享、表达每一份成长的痕迹。从作业到联系，全部在这里。</p>
@@ -283,24 +217,12 @@ permalink: /
     </div>
   </div>
 
-  <button id="backToTop" aria-label="回到顶部">↑</button>
-
   <script>
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        document.body.classList.add('scrolled');
-        document.querySelector('nav.navbar').classList.add('scrolled');
-        document.getElementById('backToTop').classList.add('show');
-      } else {
-        document.body.classList.remove('scrolled');
-        document.querySelector('nav.navbar').classList.remove('scrolled');
-        document.getElementById('backToTop').classList.remove('show');
-      }
-    });
-
-    document.getElementById('backToTop').addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    function closeNotice() {
+      const notice = document.getElementById('noticeBar');
+      notice.style.display = 'none';
+      document.body.classList.add('no-notice');
+    }
   </script>
 </body>
 </html>
