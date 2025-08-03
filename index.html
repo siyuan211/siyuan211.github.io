@@ -3,14 +3,13 @@ layout: none
 permalink: /
 ---
 
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE html><html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <title>欢迎来到我的个人空间</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的科技感首页</title>
   <style>
-    /* 基础样式 */
+    /* 深蓝渐变背景 + glass 卡片样式 */
     html, body {
       margin: 0;
       padding: 0;
@@ -18,222 +17,200 @@ permalink: /
       color: #fff;
       overflow-x: hidden;
       scroll-behavior: smooth;
-      background-color: #0B1220; /* 全黑背景 */
-    }
+      background: linear-gradient(160deg, #0f2027, #203a43, #2c5364);
+    }.notice-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 48px;
+  background: linear-gradient(90deg, #004e92, #000428);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  z-index: 1200;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  user-select: none;
+}
 
-    /* 公告栏 */
-    .notice-bar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 48px;
-      background: linear-gradient(90deg, #004e92, #000428);
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 1rem;
-      z-index: 1200; /* 高于导航栏 */
-      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-      user-select: none;
-    }
+.notice-bar .close-btn {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  user-select: none;
+}
 
-    .notice-bar .close-btn {
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      background: transparent;
-      border: none;
-      color: #fff;
-      font-size: 1.6rem;
-      line-height: 1;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      user-select: none;
-    }
+.notice-bar .close-btn:hover,
+.notice-bar .close-btn:focus {
+  color: #ff6f61;
+  outline: none;
+}
 
-    .notice-bar .close-btn:hover,
-    .notice-bar .close-btn:focus {
-      color: #ff6f61;
-      outline: none;
-    }
+nav.navbar {
+  position: fixed;
+  top: 48px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
 
-    /* 导航栏 */
-    nav.navbar {
-      position: fixed;
-      top: 48px; /* 默认公告栏高度 */
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1000;
-      transition: top 0.3s ease;
-    }
+nav .nav-logo {
+  color: #00bfff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
 
-    /* 关闭公告栏后，导航栏上移 */
-    body.no-notice nav.navbar {
-      top: 0;
-    }
+nav .nav-links a {
+  color: #fff;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
-    nav .nav-logo {
-      color: #00bfff;
-      font-weight: bold;
-      font-size: 1.5rem;
-      text-decoration: none;
-    }
+nav .nav-links a:hover {
+  color: #00bfff;
+}
 
-    nav .nav-links a {
-      color: #fff;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
+.overlay {
+  padding-top: 7.5rem;
+  padding-bottom: 3rem;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-    nav .nav-links a:hover {
-      color: #00bfff;
-    }
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
 
-    /* 主体内容 */
-    .overlay {
-      padding-top: 7.5rem; /* 导航栏 + 公告栏高度 */
-      padding-bottom: 3rem;
-      max-width: 960px;
-      margin: 0 auto;
-      text-align: center;
-    }
+p.intro {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
+.btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(90deg, #00bfff, #007acc);
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 6px 12px rgba(0,191,255,0.6);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 3rem;
+  display: inline-block;
+}
 
-    p.intro {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
+.btn:hover {
+  background: linear-gradient(90deg, #007acc, #005f99);
+  box-shadow: 0 8px 16px rgba(0,122,204,0.7);
+}
 
-    .btn {
-      padding: 0.8rem 1.5rem;
-      background: linear-gradient(90deg, #00bfff, #007acc);
-      border-radius: 8px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 1rem;
-      box-shadow: 0 6px 12px rgba(0,191,255,0.6);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      margin-bottom: 3rem;
-      display: inline-block;
-    }
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
 
-    .btn:hover {
-      background: linear-gradient(90deg, #007acc, #005f99);
-      box-shadow: 0 8px 16px rgba(0,122,204,0.7);
-    }
+.card {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 260px;
+  box-shadow: 0 8px 24px rgba(0, 191, 255, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
+  cursor: pointer;
+}
 
-    .section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-    }
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 191, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
 
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 1.5rem;
-      width: 260px;
-      box-shadow: 0 8px 20px rgba(0,191,255,0.2);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      cursor: pointer;
-    }
+.card h3 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(0,191,255,0.5);
-    }
+.card p {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin-bottom: 0.5rem;
+}
 
-    .card h3 {
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
+.btn-link {
+  color: #87cefa;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
 
-    .card p {
-      font-size: 0.95rem;
-      color: #ddd;
-      margin-bottom: 0.5rem;
-    }
+@media screen and (max-width: 600px) {
+  .overlay {
+    padding-top: 7rem;
+  }
+  h1 { font-size: 2rem; }
+  .section { flex-direction: column; }
+  .card { width: 90%; }
+}
 
-    .btn-link {
-      color: #87cefa;
-      text-decoration: underline;
-      font-size: 0.95rem;
-    }
-
-    @media screen and (max-width: 600px) {
-      .overlay {
-        padding-top: 7rem;
-      }
-      h1 { font-size: 2rem; }
-      .section { flex-direction: column; }
-      .card { width: 90%; }
-    }
   </style>
 </head>
 <body>
-  <!-- 公告栏 -->
-  <div class="notice-bar" id="noticeBar">
-    🎉 欢迎访问我们的八班博客！更多精彩请持续关注！网站创建时间7.11 创建人：刘思源
-    <button class="close-btn" aria-label="关闭公告栏" onclick="closeNotice()">✕</button>
-  </div>
-
-  <!-- 导航栏 -->
-  <nav class="navbar">
-    <a href="/" class="nav-logo">八班专属博客</a>
+  <div class="notice-bar">
+    欢迎访问我的博客！科技感界面启动中...
+    <button class="close-btn" onclick="this.parentElement.style.display='none'">×</button>
+  </div>  <nav class="navbar">
+    <a href="#" class="nav-logo">我的博客</a>
     <div class="nav-links">
-      <a href="/achievement/">成就</a>
-      <a href="/thing/">名人名事</a>
-      <a href="/homework/">作业成果</a>
-      <a href="/contact/">联系我们</a>
+      <a href="#about">关于</a>
+      <a href="#projects">项目</a>
+      <a href="#contact">联系</a>
     </div>
-  </nav>
-
-  <!-- 主内容 -->
-  <div class="overlay">
-    <h1>欢迎来到我的个人空间</h1>
-    <p class="intro">我们记录、分享、表达每一份成长的痕迹。从作业到联系，全部在这里。</p>
-    <a href="/achievement/" class="btn">查看我们的成就</a>
-
-    <div class="section">
-      <div class="card" onclick="location.href='/thing/'" tabindex="0" role="link" aria-label="进入名人名事">
-        <h3>名人名事</h3>
-        <p>介绍我们班的优秀人物，他们的故事值得铭记。</p>
-        <a href="/thing/" class="btn-link">进入板块 →</a>
-      </div>
-      <div class="card" onclick="location.href='/homework/'" tabindex="0" role="link" aria-label="进入作业成果">
-        <h3>作业成果</h3>
-        <p>我们完成的代表性作品集锦。</p>
-        <a href="/homework/" class="btn-link">进入板块 →</a>
-      </div>
-      <div class="card" onclick="location.href='/contact/'" tabindex="0" role="link" aria-label="进入联系我们">
-        <h3>联系我们</h3>
-        <p>想留言或者有建议？这里可以联系到我们。</p>
-        <a href="/contact/" class="btn-link">进入板块 →</a>
-      </div>
-    </div>
+  </nav>  <main class="overlay">
+    <h1>科技灵动首页</h1>
+    <p class="intro">打造如 Apple Glass 一般的高端感受。</p>
+    <a href="#projects" class="btn">了解更多</a><div class="section">
+  <div class="card">
+    <h3>博客文章</h3>
+    <p>查看最新更新和教程内容。</p>
+    <a class="btn-link" href="#">进入文章</a>
   </div>
 
-  <script>
-    function closeNotice() {
-      const notice = document.getElementById('noticeBar');
-      notice.style.display = 'none';
-      document.body.classList.add('no-notice');
-    }
-  </script>
+  <div class="card">
+    <h3>个人项目</h3>
+    <p>展示我构建的一些项目和工具。</p>
+    <a class="btn-link" href="#">查看项目</a>
+  </div>
+
+  <div class="card">
+    <h3>联系我</h3>
+    <p>通过邮箱或社交媒体与我取得联系。</p>
+    <a class="btn-link" href="#">联系方式</a>
+  </div>
+</div>
+
+  </main>
 </body>
 </html>
